@@ -1,0 +1,105 @@
+
+Веб-сервер на Java
+https://www.youtube.com/watch?v=4CqpoxibbgQ
+
+39-30
+Создание проекта через Maven
+maven-archtipe-webapp
+
+
+41-15
+приводим структуру проекта в соответстви
+    1) В Мэйне создаем папку java
+    2) В SRC создаем  папку test/java
+
+44-00
+в main/java создаем пакет servlets
+
+44-15
+создаем класс MyServlet.java
+extends HttpServlet
+
+Для подключения  класса HttpServlet
+идем в Googl набираем
+HttpServlet maven       -> https://mvnrepository.com/artifact/javax.servlet/servlet-api/3.0-alpha-1
+
+    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>3.0-alpha-1</version>
+        <scope>provided</scope>
+    </dependency>
+
+вставляем в депенденси, обновляем
+
+не важно
+47-00
+после обнавления в папке ExternalLibraries
+добавилась папка - <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+
+
+48-35
+про наследование и переопределение метода
+    super.doGet(req, resp);
+
+
+51-00
+переопределяем метод doGet(req, resp);
+
+
+51-26 Обьяснение! Важно!
+
+
+52-50
+переименовываем
+    src/main/webapp/index.jsp в
+    src/main/webapp/hello.jsp
+
+
+53-00
+есть сервлет но нет маршрута
+НЕобходимо замапить!
+файл web.xml
+
+
+54-15
+запуск Сервлет контейнера
+Add Configuration
+У меня так не получилось! Так как Intellij IDE не та!
+
+Поэтому сборку проекта делал в ручную!
+Maven -> Lifecycle -> clear   а потом paskage!
+
+Затем копируем WAR
+/home/alex/Hardy/MyWebServer/target/MyWebServer.war
+
+и переносим его ( через sudo nautilus)
+в папку  /opt/tomcat/webapps
+
+при перезагрузке  tomCat war аспокуется в папку
+/opt/tomcat/webapps/MyWebServer
+
+и теперь можно в браузере набрать
+http://localhost:8080/MyWebServer/
+
+Важно !  как перезрузить  tomcat , не знаю.
+сделал случайно
+через запуск
+
+http://localhost:8080/mavenSpringWebApp/index.html
+
+Очень помог в понимании вот этот урок  досмотрел до 10 минуты!
+https://www.youtube.com/watch?v=nQwdKVx6i6A&list=PLyxk-1FCKqockmP-fXZmHQ7UlYP3qvZRa&index=97&t=557s
+
+
+
+
+
+
+
+
+
+
+
+
