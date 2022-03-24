@@ -35,4 +35,9 @@ public class MyServlet extends HttpServlet {
 
         }
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/hello.jsp").forward(req,resp);
+    }
 }
